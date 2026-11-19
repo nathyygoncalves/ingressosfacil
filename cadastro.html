@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - IngressosFácil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo do site">
+            <h1>IngressosFácil</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Início</a></li>
+                <li><a href="index.html#eventos">Eventos</a></li>
+                <li><a href="index.html#vantagens">Vantagens</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cadastro">
+            <h2>Cadastre-se</h2>
+            <form id="registerForm" method="POST" novalidate>
+
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" required>
+                <span class="erro" id="erro-nome"></span>
+
+                <label for="email">Informe seu e-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="erro" id="erro-email"></span>
+
+                <label for="senha">Informe sua senha:</label>
+                <input type="password" id="senha" name="senha" required minlength="8" maxlength="12">
+                <span class="erro" id="erro-senha"></span>
+
+                <label for="CPF">CPF:</label>
+                <input type="text" id="CPF" name="CPF" placeholder="000.000.000-00" required>
+                <span class="erro" id="erro-cpf"></span>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite o texto"></textarea>
+
+                <label for="Evento">Escolha o seu evento:</label>
+                <select id="Evento" name="Evento" required>
+                    <option value="">Selecione...</option>
+                    <option value="Rock">Show Rock</option>
+                    <option value="Sertanejo">Show Sertanejo</option>
+                    <option value="Universitario">Jogo Universitário</option>
+                </select>
+                <span class="erro" id="erro-evento"></span>
+
+                <label for="quantidade">Quantidade de ingressos:</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" max="10" value="1">
+                <span class="erro" id="erro-quantidade"></span>
+
+                <fieldset>
+                    <legend>Forma de pagamento:</legend>
+                    <label><input type="radio" value="pix" name="pagamento"> Pix</label>
+                    <label><input type="radio" value="cartao" name="pagamento"> Cartão</label>
+                </fieldset>
+                <span class="erro" id="erro-pagamento"></span>
+
+                <label for="termos" class="termos">
+                    <input type="checkbox" id="termos" name="termos" required>
+                    Concordo com os termos e condições
+                </label>
+                <span class="erro" id="erro-termos"></span>
+
+                <input type="submit" value="Cadastrar">
+                <p id="mensagem-sucesso"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Desenvolvido por Nathália</p>
+    </footer>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>
